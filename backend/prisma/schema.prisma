@@ -1,0 +1,93 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql" // เปลี่ยนเป็น "mysql" หรือ "sqlite" ตามที่คุณใช้
+  url      = env("DATABASE_URL")
+}
+model pages {
+  page_id      String    @id @default(uuid()) @db.Uuid
+  page_name    String    @unique @db.VarChar(50)
+  page_name_th String    @db.VarChar(50)
+  page_name_en String    @db.VarChar(50)
+  page_url     String
+  type         String    @db.VarChar(8)
+  row          Int
+  sub_row      Int
+  is_link      Boolean   @default(true)
+  is_active    Boolean   @default(true)
+  created_at   DateTime  @default(now())
+  updated_at   DateTime? @updatedAt
+
+  permissions permissions[]
+}
+model permissions {
+  permission_id String    @id @default(uuid()) @db.Uuid
+  role          roles     @relation(fields: [role_id], references: [role_id])
+  role_id       String    @db.Uuid
+  page          pages     @relation(fields: [page_id], references: [page_id])
+  page_id       String    @db.Uuid
+  can_create    Boolean   @default(false)
+  can_read      Boolean   @default(false)
+  can_update    Boolean   @default(false)
+  can_delete    Boolean   @default(false)
+  created_at    DateTime  @default(now())
+  updated_at    DateTime? @updatedAt
+
+  @@unique([role_id, page_id])
+}
+model roles {
+  role_id    String    @id @default(uuid()) @db.Uuid
+  role_name  String    @unique @db.VarChar(15)
+  created_at DateTime  @default(now())
+  updated_at DateTime? @updatedAt
+
+  permissions permissions[]
+  users       users[]
+}
+
+model users {
+  employee_id  String  @id @default(uuid()) @db.Uuid // ใช้ UUID เป็นค่าเริ่มต้น
+  company          companies? @relation(fields: [company_id], references: [company_id])
+  role             roles      @relation(fields: [role_id], references: [role_id])
+  username     String  @unique
+  password     String
+  company_id   String?    @db.Uuid
+  role_id      String     @db.Uuid
+  email        String  @unique
+  first_name   String
+  last_name    String?
+  phone_number String?
+  created_at       DateTime   @default(now())
+  created_by       String?    @db.Uuid
+  updated_at       DateTime?  @updatedAt
+  updated_by       String?    @db.Uuid
+
+
+  companies_created          companies[]               @relation("CompanyCreatedBy")
+  companies_updated          companies[]               @relation("CompanyUpdatedBy")
+}
+
+model companies {
+  company_id      String  @id @default(uuid()) @db.Uuid
+  company_code    String? @unique @db.VarChar(10)
+  company_name    String  @unique @db.VarChar(100)
+  company_address String? @db.VarChar(255)
+  company_main    Boolean @default(false)
+  //tax_status      String? // before or after
+  //tel_number      String? @db.VarChar(10)
+
+  created_at DateTime  @default(now())
+  created_by String    @db.Uuid
+  updated_at DateTime? @updatedAt
+  updated_by String    @db.Uuid
+
+  users               users[]
+  created_by_user     users? @relation("CompanyCreatedBy", fields: [created_by], references: [employee_id])
+  updated_by_user     users? @relation("CompanyUpdatedBy", fields: [updated_by], references: [employee_id])
+
+  @@unique([company_code, company_name])
+  
+
+}
