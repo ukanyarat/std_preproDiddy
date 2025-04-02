@@ -3,6 +3,7 @@ import MainLayout from "@/components/layouts/layout.main";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from "@/components/layouts/layout.error404";
 import LoginPage from "@/page/login";
+import DrivePage from "@/page/drive";
 
 
 const router = createBrowserRouter([
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <HomePage />,
+      },
+      {
+        path: "/drive",
+        element: <DrivePage />,
       },
     ],
   },
