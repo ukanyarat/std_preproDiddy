@@ -2,21 +2,6 @@ import { Avatar, Box, Flex, HoverCard, Link, Text } from "@radix-ui/themes";
 import { FaCaretDown } from "react-icons/fa";
 import ListMenuNavbarProfile from "./listMenuNavbarProfile.tsx";
 
-const NavbarProfileInfo = () => {
-  return (
-    <HoverCard.Root>
-      <HoverCard.Trigger>
-        <Flex className="text-gray-700 mr-8" align={"center"} gap={"4"}>
-        </Flex>
-      </HoverCard.Trigger>
-      <HoverCard.Content maxWidth="300px">
-        <Flex gap={"2"} direction={"column"} width={"140px"}>
-          <ListMenuNavbarProfile title={"ออกจากระบบ"} />
-        </Flex>
-      </HoverCard.Content>
-    </HoverCard.Root>
-  );
-};
 
 const NavbarMain = () => {
   return (
@@ -48,7 +33,6 @@ const NavbarMain = () => {
         </Link>
         
         <Box className="flex-1 flex justify-end">
-          <NavbarProfileInfo />
         </Box>
       </Flex>
     </Flex>

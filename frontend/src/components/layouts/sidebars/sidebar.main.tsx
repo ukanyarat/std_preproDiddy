@@ -38,9 +38,14 @@ const SidebarMain = () => {
       path: `/`,
     },
     {
-      icon: <MdDriveEta className="" style={{ width: "24px", height: "24px" }} />,
+      icon: <MdDriveEta className="hover:text-text_main_blue text-white" style={{ width: "24px", height: "24px" }} />,
       name: "ขับรถ",
       path: `/drive`,
+    },
+    {
+      icon: <MdDriveEta className="hover:text-text_main_blue text-white" style={{ width: "24px", height: "24px" }} />,
+      name: "คู่มือการใช้งาน",
+      path: `/manual`,
     },
   ];
 

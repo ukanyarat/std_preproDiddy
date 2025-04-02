@@ -4,6 +4,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import Error404 from "@/components/layouts/layout.error404";
 import LoginPage from "@/page/login";
 import DrivePage from "@/page/drive";
+import ManualPage from "@/page/manual";
 
 
 const router = createBrowserRouter([
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "/drive",
         element: <DrivePage />,
+      },
+      {
+        path: "/manual",
+        element: <ManualPage/>,
       },
     ],
   },
