@@ -8,6 +8,7 @@ import { SidebarMenuItem } from "./sidebarMenuItem";
 import { MdDriveEta } from "react-icons/md";
 import { CgMenuRound } from "react-icons/cg";
 import { useState, useEffect } from "react";
+import { FaBookOpen } from "react-icons/fa6";
 
 // กำหนด interface สำหรับ MenuItem
 interface MenuItem {
@@ -43,7 +44,7 @@ const SidebarMain = () => {
       path: `/drive`,
     },
     {
-      icon: <MdDriveEta className="hover:text-text_main_blue text-white" style={{ width: "24px", height: "24px" }} />,
+      icon: <FaBookOpen className="hover:text-text_main_blue text-white" style={{ width: "24px", height: "24px" }} />,
       name: "คู่มือการใช้งาน",
       path: `/manual`,
     },
@@ -99,12 +100,12 @@ const SidebarMain = () => {
         className="relative z-10 h-full top-[-60px]"
       >
         <div
-          style={{
-            backgroundImage: "url('/images/JCAR-2.jpg')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-          }}
-          className="overflow-y-auto overflow-x-hidden h-full top-[-55px] text-black pt-50 pl-16 sm:pl-0"
+          // style={{
+          //   backgroundImage: "url('/images/JCAR-2.jpg')",
+          //   backgroundSize: "cover",
+          //   backgroundPosition: "center",
+          // }}
+          className="overflow-y-auto overflow-x-hidden h-[1280px] top-[-55px] text-black pt-50 pl-16 sm:pl-0 bg-red-900"
         >
           {/* พื้นที่ว่างสำหรับปุ่มเมนูในโหมดมือถือ */}
           <div className="h-16"></div>
