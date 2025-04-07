@@ -9,7 +9,7 @@ const MainLayout = () => {
   return (
     <div className=" relative w-screen h-screen">
       <NavbarMain />
-      <div className=" flex pt-[70px] w-full h-full">
+      <div className=" flex pt-[70px] w-full h-full bg-red-900">
         <SidebarMain />
         <div
           style={{
