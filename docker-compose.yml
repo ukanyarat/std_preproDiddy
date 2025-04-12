@@ -3,7 +3,7 @@ version: '3.8'
 services:
   postgres:
     image: postgres:latest
-    container_name: postgres_db
+    container_name: postgres_db_diddy
     restart: always
     environment:
       POSTGRES_USER: user
@@ -15,7 +15,7 @@ services:
       - postgres_data:/var/lib/postgresql/data
 
   pgadmin:
-    image: dpage/pgadmin4
+    image: dpage/pgadmin4/diddy
     container_name: pgadmin
     restart: always
     environment:

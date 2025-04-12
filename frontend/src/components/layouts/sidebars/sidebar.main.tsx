@@ -34,17 +34,17 @@ const SidebarMain = () => {
 
   const ListSidebarItems: SidebarItemType[] = [
     {
-      icon: <IoHomeOutline className="text-white hover:text-gray-400" style={{ width: "24px", height: "24px" }} />,
+      icon: <IoHomeOutline className="text-red-500" style={{ width: "24px", height: "24px" }} />,
       name: "หน้าหลัก",
       path: `/`,
     },
     {
-      icon: <FaBookOpen className="text-white  hover:text-gray-400" style={{ width: "24px", height: "24px" }} />,
+      icon: <FaBookOpen className="text-red-500" style={{ width: "24px", height: "24px" }} />,
       name: "คู่มือการใช้งาน",
       path: `/manual`,
     },
     {
-      icon: <MdDriveEta className="text-white  hover:text-gray-400" style={{ width: "24px", height: "24px" }} />,
+      icon: <MdDriveEta className="text-red-500" style={{ width: "24px", height: "24px" }} />,
       name: "ขับรถ",
       path: `/drive`,
     },
@@ -60,7 +60,7 @@ const SidebarMain = () => {
   };
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsMobile(window.innerWidth < 640); 
+      setIsMobile(window.innerWidth < 640);
     };
     checkScreenSize();
     window.addEventListener("resize", checkScreenSize);
@@ -73,21 +73,21 @@ const SidebarMain = () => {
         className="absolute top-[-60px] left-4 z-20 bg-red-800 text-white p-2 rounded-full hover:bg-red-700 transition-colors flex "
         aria-label={isSidebarOpen ? "ปิดเมนู" : "เปิดเมนู"}
       >
-          <CgMenuRound size={36} />
+        <CgMenuRound size={36} />
       </button>
 
       {/* Sidebar */}
       <section
         style={{
           boxShadow: isSidebarOpen ? "none" : "none",
-          width: isSidebarOpen ? (isMobile ? "120px" : "200px") : "0px",
+          width: isSidebarOpen ? (isMobile ? "60px" : "200px") : "0px",
           transition: "width 0.3s ease",
           overflow: "hidden",
         }}
         className="relative z-10 h-full top-[-55px]"
       >
         <div
-          className="overflow-y-auto overflow-x-hidden h-full top-[60px] text-black pt-50 pl-16 sm:pl-0 "
+          className="overflow-y-auto overflow-x-hidden h-full top-[60px] text-black pt-50  sm:pl-0 "
         >
 
           <div className="h-16"></div>

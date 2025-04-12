@@ -17,7 +17,7 @@ export const SidebarItem = (props: SidebarItemProps) => {
   const isActivePath = pathWithIndex ? path.includes(pathWithIndex) : false;
 
   const activeClassName = isActivePath
-    ? "text-text_main_blue border-l-[#074E9F] bg-bg_main"
+    ? "bg-white"
     : "border-l-white";
 
   const handleClick = () => {
@@ -30,14 +30,20 @@ export const SidebarItem = (props: SidebarItemProps) => {
     <Link
       to={props.path}
       className={twMerge(
-        `sm:w-[256px] w-[60px] h-[48px] p-2 flex gap-2 items-center hover:bg-red-700  active:text-black cursor-pointer ${props.disabled ? "pointer-events-none bg-gray-800" : ""
+        `sm:w-[256px] w-[60px] h-[48px] p-2 flex gap-2 items-center hover:bg-red-700 active:text-black cursor-pointer ${
+          props.disabled ? "pointer-events-none bg-gray-800" : ""
         }`,
         activeClassName
       )}
       onClick={handleClick}
     >
       {props.icon}
-      <div className=" text-4 leading-6 font-normal hidden sm:block  text-white hover:text-slate-400 ">
+      <div
+        className={twMerge(
+          "text-4 leading-6 hidden sm:block hover:text-white",
+          isActivePath ? "text-black font-bold hover:text-white" : "text-white font-normal"
+        )}
+      >
         {props.name}
       </div>
     </Link>

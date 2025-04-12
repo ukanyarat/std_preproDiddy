@@ -19,7 +19,7 @@ export default function HomeFeature() {
 
   return (
     <div className="flex flex-col items-center">
-      <Text className="text-3xl font-bold text-red-700 text-center mb-4 ">Welcome to Diddy</Text>
+      <Text className="text-3xl font-bold text-red-700 text-center mb-4 bg-red-50 w-full">Welcome to Diddy</Text>
       <Text className="text-xl text-gray-700 text-center mb-4"> ฉันคือรถบังคับอัจฉริยะ ที่ควบคุมด้วยเสียงและ AI เปลี่ยนประสบการณ์การขับขี่ให้ล้ำยุค!
         ตอบสนองฉับไว ขับเคลื่อนแม่นยำ สนุกได้ทุกวัยกับเทคโนโลยีสุดล้ำเชื่อมต่อโลกดิจิทัล สั่งการง่าย <br /> แค่พูดก็ขับได้!
       </Text>

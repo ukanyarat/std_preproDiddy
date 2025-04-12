@@ -9,7 +9,7 @@ const ManualFeature = () => {
     setIsDriving(true);
     setTimeout(() => {
       handleToDrive();
-    }, 500);
+    }, 1500);
   };
 
   const handleToDrive = () => {
@@ -47,10 +47,10 @@ const ManualFeature = () => {
           className="justify-center w-3/12 "
         />
         <Text className="text-gray-700 text-center w-full">พูดผ่านไมค์ที่หน้าควบคุม โดยการกดเปิดให้เป็นสีเขียวและพูดคำสั่งที่ต้องการ จากนั้นรอเวลาประมาลผล เมื่อรถได้ทำตามคำสั่งของคุณแล้วจึงสามารถพูดคำสั่งอื่นได้ <br />เมื่อไม่ต้องการใช้ ให้กดปุ่มปิดไมค์ ถ้าผิดแล้วจะมีสถานะเป็นสีแดง</Text>
-
+        {/* ปุ่มไปที่หน้าควบคุม*/}
         <div className="relative w-full mt-4 max-w-[200px] mx-auto h-[80px]">
           <div
-            className={`absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms]${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}`}
+            className={`absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}`}
           >
             <FaCarSide className="text-red drop-shadow-lg hover:text-red-600" onClick={handleClick} />
           </div>
@@ -75,7 +75,7 @@ const ManualFeature = () => {
 
 
         <Grid
-          columns={{ initial: "1", md: "2", sm: "3", lg: "3", xl: "3" }}
+          columns={{ initial: "1", md: "1", sm: "3", lg: "3", xl: "3" }}
           gap="3"
           rows="repeat(1, auto)"
           width="auto"
@@ -114,6 +114,21 @@ const ManualFeature = () => {
             <Text className="text-base text-gray-700 text-center mb-4">1.</Text>
           </div>
         </Grid>
+         {/* ปุ่มไปที่หน้าควบคุม*/}
+         <div className="relative w-full mt-4 max-w-[200px] mx-auto h-[80px]">
+          <div
+            className={`absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}`}
+          >
+            <FaCarSide className="text-red drop-shadow-lg hover:text-red-600" onClick={handleClick} />
+          </div>
+          <Button
+            className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md w-full transition-all duration-300 "
+            onClick={handleClick}
+            disabled={isDriving}
+          >
+            ลองขับตอนนี้!!
+          </Button>
+        </div>
       </div>
       <Text className="text-xs text-gray-200 text-center">Copyright ©2025 Diddy</Text>
 
