@@ -60,7 +60,7 @@ const IoTCarControl = () => {
   };
 
   return (
-    <div className=" w-full flex flex-col items-center justify-center mt-4 h-full" >
+    <div className=" w-full flex flex-col items-center justify-center mt-4 h-full space-x-12" >
       {isPoweredOn === false ? (
         <p className="text-sm text-gray-900 m-6 flex items-center">
           <CiWarning className="text-red-500 mr-2" />
@@ -72,7 +72,7 @@ const IoTCarControl = () => {
         <p className="text-sm text-gray-900 m-6">ไมค์ถูกปิดการใช้งานอยู่</p>
       )}
       {/* ส่วนควบคุมทิศทาง */}
-      <div className="flex flex-col items-center space-y-4">
+      <div className="flex flex-col items-center space-y-2 ">
         <button
           onClick={() => handleControl('forward')}
           disabled={!isPoweredOn}
@@ -82,7 +82,7 @@ const IoTCarControl = () => {
           <ArrowUp size={32} />
         </button>
 
-        <div className="flex space-x-4">
+        <div className="flex space-x-2">
           <button
             onClick={() => handleControl('left')}
             disabled={!isPoweredOn}

@@ -24,42 +24,43 @@ const ManualFeature = () => {
       <div className=" flex-col flex items-center space-y-4 w-full">
         <Text className="text-2xl font-bold text-gray-700 text-center  bg-red-50 w-full">🤖การสั่งการ🤖<br /></Text>
         <Text className="text-gray-700 text-center w-full font-bold text-lg">การสั่งการผ่านหน้าเว็บด้วยคีย์บอร์ด</Text>
-        <table className="border-collapse border border-gray-400 w-1/2 text-center ">
-          <thead>
-            <tr className="bg-gray-800 text-white">
-              <th className="border border-gray-300 p-2">Key</th>
-              <th className="border border-gray-300 p-2">ทางเลือก</th>
-              <th className="border border-gray-300 p-2">การกระทำ</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr><td className="border border-gray-300 p-2">w,ไ,⬆️</td><td className="border border-gray-300 p-2">ArrowUp, ไ</td><td className="border border-gray-300 p-2">เดินหน้า</td></tr>
-            <tr><td className="border border-gray-300 p-2">s,ห,⬇️</td><td className="border border-gray-300 p-2">ArrowDown, ห</td><td className="border border-gray-300 p-2">ถอยหลัง</td></tr>
-            <tr><td className="border border-gray-300 p-2">a,ฟ,⬅️</td><td className="border border-gray-300 p-2">ArrowLeft, ฟ</td><td className="border border-gray-300 p-2">ไปทางซ้าย</td></tr>
-            <tr><td className="border border-gray-300 p-2">d,ก,➡️</td><td className="border border-gray-300 p-2">ArrowRight, ก</td><td className="border border-gray-300 p-2">ไปทางขวา</td></tr>
-            <tr><td className="border border-gray-300 p-2">กดปุ่มอื่นๆ</td><td className="border border-gray-300 p-2">Esc, กดปุ่มอื่นๆ</td><td className="border border-gray-300 p-2">หยุด</td></tr>
-          </tbody>
-        </table>
+        <div className="overflow-x-auto w-full flex justify-center pl-8">
+          <table className="border-collapse border border-gray-400  text-center">
+            <thead>
+              <tr className="bg-gray-800 text-white">
+                <th className="border border-gray-300 p-2">Key</th>
+                <th className="border border-gray-300 p-2">ทางเลือก</th>
+                <th className="border border-gray-300 p-2">การกระทำ</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td className="border border-gray-300 p-2">w,ไ,⬆️</td><td className="border border-gray-300 p-2">ArrowUp, ไ</td><td className="border border-gray-300 p-2">เดินหน้า</td></tr>
+              <tr><td className="border border-gray-300 p-2">s,ห,⬇️</td><td className="border border-gray-300 p-2">ArrowDown, ห</td><td className="border border-gray-300 p-2">ถอยหลัง</td></tr>
+              <tr><td className="border border-gray-300 p-2">a,ฟ,⬅️</td><td className="border border-gray-300 p-2">ArrowLeft, ฟ</td><td className="border border-gray-300 p-2">ไปทางซ้าย</td></tr>
+              <tr><td className="border border-gray-300 p-2">d,ก,➡️</td><td className="border border-gray-300 p-2">ArrowRight, ก</td><td className="border border-gray-300 p-2">ไปทางขวา</td></tr>
+              <tr><td className="border border-gray-300 p-2">กดปุ่มอื่นๆ</td><td className="border border-gray-300 p-2">Esc, กดปุ่มอื่นๆ</td><td className="border border-gray-300 p-2">หยุด</td></tr>
+            </tbody>
+          </table>
+        </div>
+
         <Text className="text-gray-700 text-center w-full font-bold text-lg">การสั่งการผ่านหน้าเว็บด้วยเสียง</Text>
-        <img
-          src="/images/5555.png"
-          alt=""
-          className="justify-center w-3/12 "
-        />
         <Text className="text-gray-700 text-center w-full">พูดผ่านไมค์ที่หน้าควบคุม โดยการกดเปิดให้เป็นสีเขียวและพูดคำสั่งที่ต้องการ จากนั้นรอเวลาประมาลผล เมื่อรถได้ทำตามคำสั่งของคุณแล้วจึงสามารถพูดคำสั่งอื่นได้ <br />เมื่อไม่ต้องการใช้ ให้กดปุ่มปิดไมค์ ถ้าผิดแล้วจะมีสถานะเป็นสีแดง</Text>
         {/* ปุ่มไปที่หน้าควบคุม*/}
-        <div className="relative w-full mt-4 max-w-[200px] mx-auto h-[80px]">
+        <div className="relative w-full mt-4 max-w-[120px] mx-auto h-[80px]">
           <div
-            className={`absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}`}
+            className={`
+            absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms]
+            ${isDriving ? "translate-x-[120px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}
+          `}
           >
             <FaCarSide className="text-red drop-shadow-lg hover:text-red-600" onClick={handleClick} />
           </div>
           <Button
-            className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md w-full transition-all duration-300 "
+            className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md min-w-32 transition-all duration-300 "
             onClick={handleClick}
             disabled={isDriving}
           >
-            ลองขับตอนนี้!!
+            เริ่มเลย!!
           </Button>
         </div>
 
@@ -114,19 +115,22 @@ const ManualFeature = () => {
             <Text className="text-base text-gray-700 text-center mb-4">1.</Text>
           </div>
         </Grid>
-         {/* ปุ่มไปที่หน้าควบคุม*/}
-         <div className="relative w-full mt-4 max-w-[200px] mx-auto h-[80px]">
+        {/* ปุ่มไปที่หน้าควบคุม*/}
+        <div className="relative w-full mt-4 max-w-[120px] mx-auto h-[80px]">
           <div
-            className={`absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}`}
+            className={`
+            absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms]
+            ${isDriving ? "translate-x-[120px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}
+          `}
           >
             <FaCarSide className="text-red drop-shadow-lg hover:text-red-600" onClick={handleClick} />
           </div>
           <Button
-            className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md w-full transition-all duration-300 "
+            className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md min-w-32 transition-all duration-300 "
             onClick={handleClick}
             disabled={isDriving}
           >
-            ลองขับตอนนี้!!
+            เริ่มเลย!!
           </Button>
         </div>
       </div>

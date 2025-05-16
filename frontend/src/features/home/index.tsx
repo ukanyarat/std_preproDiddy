@@ -24,21 +24,21 @@ export default function HomeFeature() {
         ตอบสนองฉับไว ขับเคลื่อนแม่นยำ สนุกได้ทุกวัยกับเทคโนโลยีสุดล้ำเชื่อมต่อโลกดิจิทัล สั่งการง่าย <br /> แค่พูดก็ขับได้!
       </Text>
 
-      <div className="relative w-full mt-4 max-w-[200px] mx-auto h-[80px]">
+      <div className="relative w-full mt-4 max-w-[120px] mx-auto h-[80px]">
         <div
           className={`
             absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms]
-            ${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}
+            ${isDriving ? "translate-x-[120px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}
           `}
         >
           <FaCarSide className="text-red drop-shadow-lg hover:text-red-600" onClick={handleClick} />
         </div>
         <Button
-          className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md w-full transition-all duration-300 "
+          className=" text-xl font-bold text-white bg-green-600 hover:bg-green-700 rounded-lg shadow-md min-w-32 transition-all duration-300 "
           onClick={handleClick}
           disabled={isDriving}
         >
-          ลองขับตอนนี้!!
+          เริ่มเลย!!
         </Button>
       </div>
 
