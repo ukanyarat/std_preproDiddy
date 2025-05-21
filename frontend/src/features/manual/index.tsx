@@ -306,9 +306,9 @@ const ManualFeature = () => {
         {/* ปุ่มไปที่หน้าควบคุม */}
         <div className="flex flex-col items-center">
           <Text className="text-xl font-bold text-gray-800 dark:text-gray-200 mb-4">พร้อมที่จะควบคุม Diddy แล้วหรือยัง?</Text>
-          <div className="relative w-full max-w-[250px] mx-auto h-[100px]">
+          <div className="relative w-full max-w-[150px] mx-auto h-[100px]">
             <div
-              className={`absolute top-1/2 -translate-y-1/2 text-6xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[250px] translate-y-[-45px]" : "translate-x-[-50px] translate-y-[-45px]"}`}
+              className={`absolute top-1/2 -translate-y-1/2 text-6xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[150px] translate-y-[-45px]" : "translate-x-[-50px] translate-y-[-45px]"}`}
             >
               <FaCarSide className="text-red-600 drop-shadow-lg hover:text-red-700 cursor-pointer" onClick={triggerDriveRedirect} />
             </div>
@@ -318,7 +318,7 @@ const ManualFeature = () => {
               onClick={triggerDriveRedirect}
               disabled={isDriving}
             >
-              ลองขับตอนนี้!!
+              Start!
             </Button>
           </div>
         </div>

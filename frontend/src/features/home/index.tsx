@@ -36,12 +36,9 @@ export default function HomeFeature() {
         ตอบสนองฉับไว ขับเคลื่อนแม่นยำ สนุกได้ทุกวัยกับเทคโนโลยีสุดล้ำเชื่อมต่อโลกดิจิทัล สั่งการง่าย <br /> แค่พูดก็ขับได้!
       </Text>
 
-      <div className="relative w-full mt-4 max-w-[200px] mx-auto h-[80px]">
+      <div className="relative w-full max-w-[150px] mx-auto h-[100px]">
         <div
-          className={`
-            absolute top-1/2 -translate-y-1/2 text-5xl transition-transform duration-[1000ms]
-            ${isDriving ? "translate-x-[200px] translate-y-[-35px]" : "translate-x-[-40px] translate-y-[-35px]"}
-          `}
+          className={`absolute top-1/2 -translate-y-1/2 text-6xl transition-transform duration-[1000ms] ${isDriving ? "translate-x-[150px] translate-y-[-45px]" : "translate-x-[-50px] translate-y-[-45px]"}`}
         >
           {/* เปลี่ยน onClick ของ FaCarSide ให้เรียก triggerDriveRedirect */}
           <FaCarSide className="text-red drop-shadow-lg hover:text-red-600 cursor-pointer" onClick={triggerDriveRedirect} />
@@ -51,7 +48,7 @@ export default function HomeFeature() {
           onClick={triggerDriveRedirect} // เรียก triggerDriveRedirect
           disabled={isDriving}
         >
-          ลองขับตอนนี้!!
+          Start!
         </Button>
       </div>
 
