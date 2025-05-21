@@ -8,7 +8,8 @@ export default function HomeFeature() {
   const [isDriving, setIsDriving] = useState(false);
   // State ใหม่สำหรับควบคุมการ redirect
   const [redirectToKey, setRedirectToKey] = useState<AppUrlKeys | null>(null);
-
+  //const API_PI = process.env.API_KEY;
+  
   // ฟังก์ชันที่ trigger การ redirect ไปยัง "ขับรถ" (ngrok URL)
   const triggerDriveRedirect = () => {
     setIsDriving(true); // สำหรับ animation
