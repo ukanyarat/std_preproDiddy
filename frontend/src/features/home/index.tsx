@@ -56,7 +56,7 @@ export default function HomeFeature() {
       </div>
 
       <img
-        src="/images/5555.png"
+        src="/images/6.jpg"
         alt="คลิกเพื่อเดินทาง"
         className="justify-center w-1/2 hover:cursor-pointer hover:opacity-80 opacity-100 transition ease-in-out duration-300 mb-4"
         onClick={triggerDriveRedirect} // เรียก triggerDriveRedirect
