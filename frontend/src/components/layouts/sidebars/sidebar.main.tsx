@@ -10,6 +10,9 @@ import { CgMenuRound } from "react-icons/cg";
 import { useState, useEffect } from "react";
 import { FaBookOpen } from "react-icons/fa6";
 import { Text } from "@radix-ui/themes";
+import ExternalRedirect from "@/components/customs/alert/ExternalRedirect";
+
+const driveNgrokUrl = "https://f996-2405-9800-b661-12c3-a266-8b9d-17b6-1d3f.ngrok-free.app/";
 
 // กำหนด interface สำหรับ MenuItem
 interface MenuItem {
@@ -46,7 +49,7 @@ const SidebarMain = () => {
     {
       icon: <MdDriveEta className="text-red-500" style={{ width: "24px", height: "24px" }} />,
       name: "ขับรถ",
-      path: `/drive`,
+      path: driveNgrokUrl,
     },
 
   ];
